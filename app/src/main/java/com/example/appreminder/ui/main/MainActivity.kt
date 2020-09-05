@@ -7,15 +7,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.appreminder.data.model.Reminder
 import com.example.appreminder.databinding.ActivityMainBinding
 import com.example.appreminder.utils.Status
-import com.example.appreminder.utils.SwipeToDeleteCallback
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
