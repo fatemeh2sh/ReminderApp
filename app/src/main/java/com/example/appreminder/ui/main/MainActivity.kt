@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
                 Status.LOADING -> {
                 }
                 Status.SUCCESS -> {
-                    it.data?.let { users -> renderList(users) }
+                    it.data?.let { users -> renderList(users.reversed()) }
                     binding.llData.visibility = View.VISIBLE
                     binding.relNoData.visibility = View.GONE
 
