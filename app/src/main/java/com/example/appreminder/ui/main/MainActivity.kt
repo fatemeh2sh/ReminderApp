@@ -1,17 +1,25 @@
 package com.example.appreminder.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.appreminder.R
 import com.example.appreminder.data.model.Reminder
 import com.example.appreminder.databinding.ActivityMainBinding
-import com.example.appreminder.utils.Status
+import com.example.appreminder.ui.insert.InsertActivity
+import com.example.appreminder.utils.*
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
@@ -38,7 +46,6 @@ class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
                 Status.LOADING -> {
                 }
                 Status.SUCCESS -> {
-
                     it.data?.let { users -> renderList(users) }
                     binding.llData.visibility = View.VISIBLE
                     binding.relNoData.visibility = View.GONE
@@ -64,8 +71,25 @@ class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
         adapter = MainAdapter(arrayListOf(), this)
         binding.recyclerView.adapter = adapter
 
-    }
 
+        val swipeHandler = object : SwipeToDeleteCallback(this) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                var item = adapter.getItemAt(viewHolder.adapterPosition)
+                adapter.removeAt(viewHolder.adapterPosition)
+                mainViewModel.delete(item.id)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(swipeHandler)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+
+
+        binding.floatAdd.setOnClickListener {
+            Intent(this, InsertActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+
+    }
     override fun onClicked(Id: Int) {
 
         Log.e("", "")
