@@ -1,7 +1,8 @@
-package com.example.appreminder
+package com.example.appreminder.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.appreminder.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
