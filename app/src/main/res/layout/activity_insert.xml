@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".ui.insert.InsertActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/cover_toolbar"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/size_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/str_add_plan"
+            android:textColor="@color/colorWhite" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/size_45dp"
+            android:layout_height="@dimen/size_45dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginTop="@dimen/size_80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="@dimen/size_5dp"
+                app:cardCornerRadius="@dimen/size_5dp">
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20dp"
+                android:layout_marginRight="@dimen/size_20dp"
+                android:layout_marginBottom="@dimen/size_20dp"
+                app:cardElevation="@dimen/size_5dp"
+                app:cardCornerRadius="@dimen/size_5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/title"
+                    android:hint="Title"
+                    android:drawablePadding="@dimen/size_5dp"
+                    android:drawableLeft="@drawable/ic_title_note"
+                    android:layout_width="match_parent"
+                    android:maxLength="15"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/note"
+                    android:hint="Note"
+                    android:drawablePadding="@dimen/size_5dp"
+                    android:drawableLeft="@drawable/ic_ex_note"
+                    android:layout_width="match_parent"
+                    android:maxLength="50"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHour"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50dp"
+                android:layout_marginLeft="@dimen/size_20dp"
+                android:layout_marginRight="@dimen/size_20dp"
+                android:layout_marginBottom="@dimen/size_20dp"
+                app:cardElevation="@dimen/size_5dp"
+                app:cardCornerRadius="@dimen/size_5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+             <androidx.appcompat.widget.AppCompatTextView
+                 android:id="@+id/tvTextHour"
+                 android:layout_height="match_parent"
+                 android:layout_width="wrap_content"
+                 android:gravity="center_vertical"
+                 android:paddingLeft="@dimen/size_10dp"
+                 android:layout_alignParentLeft="true"
+                 android:visibility="visible"
+                 android:text="Hour:" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHour"
+                    android:layout_height="match_parent"
+                    android:paddingRight="@dimen/size_10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:visibility="visible" />
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_16dp"
+        android:layout_marginBottom="@dimen/size_20dp"
+        android:src="@drawable/ic_done"
+        app:backgroundTint="@color/colorAccent"
+        app:backgroundTintMode="src_in"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/colorAccent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
