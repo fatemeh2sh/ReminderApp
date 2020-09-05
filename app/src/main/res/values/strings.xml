@@ -4,4 +4,7 @@
     <string name="str_all_tasks">All Tasks</string>
     <string name="str_no_data">No Data</string>
     <string name="str_tasks">Tasks</string>
+    <string name="str_add_plan">Add Plan</string>
+    <string name="str_ok">Ok</string>
+    <string name="str_cancel">Cancel</string>
 </resources>

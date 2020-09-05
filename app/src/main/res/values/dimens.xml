@@ -6,6 +6,9 @@
     <dimen name="size_15dp">15dp</dimen>
     <dimen name="size_16dp">16dp</dimen>
     <dimen name="size_20dp">20dp</dimen>
+    <dimen name="size_45dp">45dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
     <dimen name="size_60dp">60dp</dimen>
+    <dimen name="size_80dp">80dp</dimen>
 
 </resources>
