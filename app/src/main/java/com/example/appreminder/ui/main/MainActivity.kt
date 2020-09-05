@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity(),MainAdapter.ItemListener {
                 var item = adapter.getItemAt(viewHolder.adapterPosition)
                 adapter.removeAt(viewHolder.adapterPosition)
                 mainViewModel.delete(item.id)
+                cancelAlarm(applicationContext,item.alarmId)
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)

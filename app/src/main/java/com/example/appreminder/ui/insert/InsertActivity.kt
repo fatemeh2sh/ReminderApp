@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appreminder.data.model.Reminder
 import com.example.appreminder.databinding.ActivityInsertBinding
+import com.example.appreminder.utils.setAlarm
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -49,6 +50,7 @@ class InsertActivity : AppCompatActivity(),HourDialog.onTimeClick {
                 var idAlarm = time.toInt()
                 var item = getItemReminder(time,idAlarm)
                 insertViewModel.insert(item)
+                setAlarm(applicationContext,idAlarm,time,item.title,item.note)
                 Handler(mainLooper).postDelayed({finish()},1000)
                 Log.e("mmm",time.toString())}
             else{
