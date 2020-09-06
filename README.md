@@ -1,12 +1,15 @@
+
+This project is simple Reminder App with libraries and MVVM
+
 # ReminderApp
 
-Libraries Used:
+MVVM
 
 Hilt
 
-ViewModel
-
 Flow
+
+ViewModel
 
 ViewBinding
 
