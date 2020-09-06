@@ -59,4 +59,12 @@ class MainAdapter(
         notifyDataSetChanged()
     }
 
+    fun removeAt(position: Int) {
+        this.arrayReminder.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    fun getItemAt(position: Int): Reminder {
+        return this.arrayReminder[position]
+    }
 }
