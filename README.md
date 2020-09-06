@@ -1,3 +1,4 @@
+
 This project is simple Reminder App with libraries and MVVM
 
 # ReminderApp
@@ -9,8 +10,6 @@ Hilt
 Flow
 
 ViewModel
-
-LiveData
 
 ViewBinding
 

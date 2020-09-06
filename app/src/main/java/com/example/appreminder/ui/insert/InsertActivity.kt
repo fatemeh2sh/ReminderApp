@@ -75,8 +75,6 @@ class InsertActivity : AppCompatActivity(),HourDialog.onTimeClick {
                 it.set(Calendar.HOUR_OF_DAY, hour)
                 it.set(Calendar.MINUTE, minute)
             }
-            it.set(Calendar.SECOND,0)
-            it.set(Calendar.MILLISECOND,0)
 
             it.timeInMillis
         }

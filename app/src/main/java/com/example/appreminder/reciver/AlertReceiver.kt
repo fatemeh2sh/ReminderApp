@@ -18,6 +18,6 @@ class AlertReceiver:BroadcastReceiver() {
             time = it.getLong("date")
         }
 
-        showNotification(1,context,title + " " + convertTimeToDateString(time) , content)
+        showNotification(time.toInt(),context,title + " " + convertTimeToDateString(time) , content)
     }
 }
