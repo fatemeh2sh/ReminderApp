@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/size_10dp"
+    android:layout_marginRight="@dimen/size_10dp"
+    android:layout_marginBottom="@dimen/size_5dp"
+    android:layout_marginTop="@dimen/size_10dp"
+    app:cardElevation="@dimen/size_5dp"
+    app:cardCornerRadius="@dimen/size_10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="@dimen/size_10dp"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/llShape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:layout_marginRight="@dimen/size_5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/llShape"
+        android:layout_toLeftOf="@+id/textViewDate"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="Call"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNote"
+        android:text="call to friends"
+        android:paddingBottom="10dp"
+        android:maxLength="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDate"
+        android:text="1399/7/19 4:15"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</androidx.cardview.widget.CardView>
+
